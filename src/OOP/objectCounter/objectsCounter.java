@@ -1,0 +1,25 @@
+package OOP.objectCounter;
+
+public class objectsCounter {
+
+    //Static field with current value, start from 0
+    private static long currentValue = 0;
+
+    //Private Constructor (unaccessible)
+    private objectsCounter() {
+    }
+
+    //Increase value with one
+    public static long NextValue() {
+        currentValue++;
+        return currentValue;
+    }
+    //Get current value
+    public static long CurrentValue() {
+        return currentValue;
+    }
+    //Reset value
+    public static void Reset() {
+        currentValue = 0;
+    }
+}
