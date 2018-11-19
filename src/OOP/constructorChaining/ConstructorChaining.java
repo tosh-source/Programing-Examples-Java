@@ -49,3 +49,7 @@ class Point {
         return resultAsString;
     }
 }
+
+
+//MORE INFO:
+//"Introduction to optional parameters in Java" -> https://stackify.com/optional-parameters-java/
