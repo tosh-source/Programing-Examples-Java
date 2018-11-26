@@ -51,8 +51,24 @@ public class Customer {
         return aboutCustomer;
     }
 
-    //Default Constructor
+    //Constructors with parameters
+    //NOTE: Constructors in Java is not so flexible like in C#! Constructor chaining is needed!
     public Customer() {
-        //TO DO
+        this("Unknown", "Unknown", 0, "Unknown");
+    }
+    public Customer(String firstName, int age, String customerCarModel) {
+        this(firstName, "Unknown", age, customerCarModel);
+    }
+    public Customer(String firstName, String lastName, String customerCarModel) {
+        this(firstName, lastName, 0, customerCarModel);
+    }
+    public Customer(String firstName, String lastName, int age) {
+        this(firstName, lastName, age, "Unknown");
+    }
+    public Customer(String firstName, String lastName, int age, String customerCarModel) {
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setAge(age);
+        this.setCustomerCarModel(customerCarModel);
     }
 }
