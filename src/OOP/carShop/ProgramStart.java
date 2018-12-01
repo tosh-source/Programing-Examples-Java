@@ -26,6 +26,16 @@ public class ProgramStart {
         //Third customer
         Customer customerBlago = new Customer("Blago", "Georgiev", CarModels.Honda.toString());  //using of optional parameters to select "customerCarModel" and skip "Age" value
         Print(customerBlago.getFirstName(), customerBlago.getLastName(), customerBlago.getAge(), customerBlago.getCustomerCarModel());
+
+
+        //BONUS
+        //All customer as one (create array of our object)
+        Customer[] customers = new Customer[] {customerBlago, customerSlavi, customerIvan};
+
+        for (Customer customer : customers) {
+            System.out.println();
+            Print(customer.getFirstName(), customer.getLastName(), customer.getAge(), customer.getCustomerCarModel());
+        }
     }
 
     static void Print(String FirstName, String LastName, int Age, String CustomerCarModel) {
