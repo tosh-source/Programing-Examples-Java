@@ -3,6 +3,7 @@ package compareMethods_equals_;
 public class compareMethods {
 
     private static String NEW_LINE = System.lineSeparator();
+    private static String WRONG_RESULT = " <- WRONG result!";
 
     public static void main(String[] args) {
 
@@ -23,7 +24,7 @@ public class compareMethods {
         String str3 = new String(str1);  //"abc", but on another position on heap memory (different instances)
 
         System.out.println(NEW_LINE + str3.equals(str1));
-        System.out.println(str3 == str1);  //WRONG result!!! It should be true, but because "==" compare only instances (even WITH same Strings values/literals), the result is printed as false.
+        System.out.println((str3 == str1) + WRONG_RESULT);  //WRONG result! It should be true, but because "==" compare only instances (even WITH same Strings values/literals), the result is printed as false.
 
         //.equals() <- good practice (but ONLY for non-null reference values) -> https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)
         //"=="      <- BAD practice (only in special cases, like null compares) -> https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html
@@ -40,6 +41,7 @@ public class compareMethods {
         Integer int2 = new Integer(6);
 
         System.out.println(NEW_LINE + int1.equals(int2));
-        System.out.println(int1 == int2);  //WRONG result!!!
+        System.out.println((int1 == int2) + WRONG_RESULT);  //WRONG result!
+
     }
 }
