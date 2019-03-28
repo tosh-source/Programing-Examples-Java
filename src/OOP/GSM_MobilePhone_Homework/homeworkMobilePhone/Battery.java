@@ -10,6 +10,7 @@ public class Battery {
     public String getBatteryModel() {
         return batteryModel;
     }
+
     public void setBatteryModel(String batteryModel) {
         this.batteryModel = batteryModel;
     }
@@ -17,6 +18,7 @@ public class Battery {
     public Integer getHoursIdle() {
         return hoursIdle;
     }
+
     public void setHoursIdle(Integer hoursIdle) {
         this.hoursIdle = hoursIdle;
     }
@@ -24,6 +26,7 @@ public class Battery {
     public Integer getHoursTalk() {
         return hoursTalk;
     }
+
     public void setHoursTalk(Integer hoursTalk) {
         this.hoursTalk = hoursTalk;
     }
@@ -31,9 +34,47 @@ public class Battery {
     public BatteryType getBatteryType() {
         return batteryType;
     }
+
     public void setBatteryType(BatteryType batteryType) {
         this.batteryType = batteryType;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
 
+        if (getBatteryModel() == null || getBatteryModel().isEmpty()) {
+            result.append("There is no battery information."
+                    + System.lineSeparator());
+        } else {
+            result.append("Battery Model: " + this.getBatteryModel()
+                    + System.lineSeparator());
+        }
+
+        if (getHoursIdle().equals(0)) {
+            result.append("There is no information about \"Idle Hours\"."
+                    + System.lineSeparator());
+        } else {
+            result.append("\"Idle Hours\": " + this.getHoursIdle()
+                    + System.lineSeparator());
+        }
+
+        if (getHoursTalk().equals(0)) {
+            result.append("There is no information about \"Talk Hours\"."
+                    + System.lineSeparator());
+        } else {
+            result.append("\"Talk Hours\": " + this.getHoursTalk()
+                    + System.lineSeparator());
+        }
+
+        if (getBatteryType().equals(BatteryType.NotDefined)) {
+            result.append("Battery type is not defined."
+                    + System.lineSeparator());
+        } else {
+            result.append("BatteryType: " + this.getBatteryType()
+                    + System.lineSeparator());
+        }
+
+        return result.toString();
+    }
 }
