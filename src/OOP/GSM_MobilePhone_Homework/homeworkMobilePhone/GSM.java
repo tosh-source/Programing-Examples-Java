@@ -12,6 +12,7 @@ public class GSM {
     private String manufacturer;
     private String price;
     private String owner;
+    private Battery batterySpec;
 
     //Properties
     public static GSM getiPhone4S() {
@@ -50,7 +51,7 @@ public class GSM {
 
     public void setPrice(String price) {
 
-        if (price == null) {  //this is only to prevent "ArgumentNullException"
+        if (price == null) {  //this is only to prevent "NullPointerException"
 
         } else {
 
@@ -71,11 +72,22 @@ public class GSM {
 
     public void setOwner(String owner) {
 
-        if (owner.equals("")) {
+        if (owner == null) {  //this is only to prevent "NullPointerException"
+
+        }
+        else if (owner.isEmpty()) {
             throw new IllegalArgumentException();
         }
 
         this.owner = owner;
+    }
+
+    public Battery getBatterySpec() {
+        return batterySpec;
+    }
+
+    public void setBatterySpec(Battery batterySpec) {
+        this.batterySpec = batterySpec;
     }
 
     //Constructors
