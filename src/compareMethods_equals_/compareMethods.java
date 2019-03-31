@@ -47,7 +47,7 @@ public class compareMethods {
 //BONUS: Good practice to compare Strings.
 //NOTE: .equals() method in Java can use only non-null reference values.
 //
-//1. String.isNullOrEmpty() like method on C#
+//1. String.isNullOrEmpty() C# like method on Java
 //=====================================
 //if (text == null || text.isEmpty()) {
 // }
