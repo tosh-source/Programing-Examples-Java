@@ -13,6 +13,7 @@ public class GSM {
     private String price;
     private String owner;
     private Battery batterySpec;
+    private Display displaySpec;
 
     //Properties
     public static GSM getiPhone4S() {
@@ -88,6 +89,14 @@ public class GSM {
 
     public void setBatterySpec(Battery batterySpec) {
         this.batterySpec = batterySpec;
+    }
+
+    public Display getDisplaySpec() {
+        return displaySpec;
+    }
+
+    public void setDisplaySpec(Display displaySpec) {
+        this.displaySpec = displaySpec;
     }
 
     //Constructors
