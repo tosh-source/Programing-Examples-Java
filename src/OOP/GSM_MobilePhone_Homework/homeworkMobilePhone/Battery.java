@@ -68,11 +68,9 @@ public class Battery {
         }
 
         if (getBatteryType().equals(BatteryType.NotDefined)) {
-            result.append("Battery type is not defined."
-                    + System.lineSeparator());
+            result.append("Battery type is not defined.");
         } else {
-            result.append("BatteryType: " + this.getBatteryType()
-                    + System.lineSeparator());
+            result.append("BatteryType: " + this.getBatteryType());
         }
 
         return result.toString();
