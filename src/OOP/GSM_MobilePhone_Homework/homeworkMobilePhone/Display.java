@@ -34,12 +34,11 @@ public class Display {
         }
 
         if (getDisplayColors() == null || getDisplayColors().isEmpty()) {
-            result.append("There is no display colors information."
-                    + System.lineSeparator());
+            result.append("There is no display colors information.");
         } else {
-
+            result.append("DisplayColors: " + this.getDisplayColors());
         }
 
-        return super.toString();
+        return result.toString();
     }
 }
