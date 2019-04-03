@@ -1,8 +1,11 @@
 package dateTime_Methods;
 
+import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class dateTime_Methods {
 
@@ -21,7 +24,19 @@ public class dateTime_Methods {
         System.out.println("LocalDate: " + date);
         System.out.println("LocalDateTime: " + dateTime);
 
-        //
+        //II. Formatting "java.time".
+        String str = "16-03-2019";
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate anotherDate = LocalDate.parse(str, formatter);
+            System.out.println(anotherDate);
+
+        } catch (DateTimeParseException timeEX) {
+            System.out.printf("%s <- ERROR! Can not be parsed! \n", str);
+            //throw timeEX;
+        }
 
     }
 }
+
+//More info -> https://stackoverflow.com/questions/5677470/java-why-is-the-date-constructor-deprecated-and-what-do-i-use-instead
