@@ -28,7 +28,7 @@ public class dateTime_Methods {
         //II. Formatting "java.time".
         //How to convert String to LocalDate -> https://www.mkyong.com/java8/java-8-how-to-convert-string-to-localdate/
 
-        String str = "16-03-2019";
+        String str = "16-03-2019";  //NOTE: need to be in ISO format (see li9nk above!)
 
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
