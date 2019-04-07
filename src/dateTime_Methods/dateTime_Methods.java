@@ -24,12 +24,16 @@ public class dateTime_Methods {
         System.out.println("LocalDate: " + date);
         System.out.println("LocalDateTime: " + dateTime);
 
+
         //II. Formatting "java.time".
+        //How to convert String to LocalDate -> https://www.mkyong.com/java8/java-8-how-to-convert-string-to-localdate/
+
         String str = "16-03-2019";
+
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             LocalDate anotherDate = LocalDate.parse(str, formatter);
-            System.out.println(anotherDate);
+            System.out.println("\nFormat \"java.time\" " + anotherDate);
 
         } catch (DateTimeParseException timeEX) {
             System.out.printf("%s <- ERROR! Can not be parsed! \n", str);
