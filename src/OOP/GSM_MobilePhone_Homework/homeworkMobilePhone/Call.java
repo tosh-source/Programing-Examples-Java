@@ -42,10 +42,27 @@ public class Call {
         this.duration = duration;
     }
 
+    //Def. constructor
     public Call() {
         this.date = LocalDate.now(); //When create new instance of Call, date and time is set now.
         this.time = LocalTime.now();
     }
 
+    @Override
+    public String toString() {
+        String result = "";
 
+        if (getDialedPhoneNumber() != null) {
+            result += "Dialed phone number: " + this.getDialedPhoneNumber() + System.lineSeparator();
+        }
+
+        if (getDuration().compareTo(BigDecimal.ZERO) != 0) {
+            result += "Call duration: " + this.getDuration() + System.lineSeparator();
+        }
+
+        result += "Call date: " + this.getDate() + System.lineSeparator();
+        result += "Call time: " + this.getTime() + System.lineSeparator();
+
+        return result;
+    }
 }
