@@ -24,7 +24,7 @@ public class BigDecimal_Examples {
         ////////////////////////////////////////////////////////////////////////
 
         //1.2 Wrong way
-        BigDecimal wrongResult = new BigDecimal(4654.0 / 814.0);  //NOTE: In this syntax BigDecimal will calculate WRONG result !! 
+        BigDecimal wrongResult = new BigDecimal(4654.0 / 814.0);    //NOTE: In this syntax BigDecimal will calculate WRONG result !!
         System.out.println("Wrong result: \n" + wrongResult + "\n");
 
 
@@ -33,7 +33,7 @@ public class BigDecimal_Examples {
         //https://stackoverflow.com/questions/10950914/how-to-check-if-bigdecimal-variable-0-in-java/10950967
         ////////////////////////////////////////////////////////////
         BigDecimal bigDeci = new BigDecimal("10");
-        System.out.println(bigDeci.compareTo(BigDecimal.ZERO) == 0);
+        System.out.println(bigDeci.compareTo(BigDecimal.ZERO) == 0);    //NOTE: To receive true/false as result, we need to compare with "0", because ".compareTo()" method actually return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than compared value.
         System.out.println(bigDeci.compareTo(BigDecimal.TEN) == 0);
         ////////////////////////////////////////////////////////////
 
