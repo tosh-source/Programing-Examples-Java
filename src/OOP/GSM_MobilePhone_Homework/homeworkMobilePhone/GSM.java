@@ -1,5 +1,6 @@
 package OOP.GSM_MobilePhone_Homework.homeworkMobilePhone;
 
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ public class GSM {
     private String owner;
     private Battery batterySpec;
     private Display displaySpec;
+    private ArrayList<Call> callHistory;
 
     //Properties
     public static GSM getiPhone4S() {
@@ -97,6 +99,20 @@ public class GSM {
 
     public void setDisplaySpec(Display displaySpec) {
         this.displaySpec = displaySpec;
+    }
+
+    public ArrayList<Call> getCallHistory() {
+        return new ArrayList<>(this.callHistory);
+    }
+
+    public void setCallHistory(ArrayList<Call> callHistory) {
+
+        if (this.callHistory == null) {
+            this.callHistory = new ArrayList<>();
+        }
+
+        this.callHistory.clear();
+        this.callHistory = callHistory;
     }
 
     //Constructors
