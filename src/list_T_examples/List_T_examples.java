@@ -25,6 +25,7 @@ public class List_T_examples {
         integerList2.add(5);
 
         System.out.println(integerList + "\n" + integerList2);
+        //More info about ArrayList commands/methods --> https://www.w3schools.com/java/java_arraylist.asp
 
     }
 }
