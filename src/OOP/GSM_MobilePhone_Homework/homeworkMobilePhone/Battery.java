@@ -39,6 +39,14 @@ public class Battery {
         this.batteryType = batteryType;
     }
 
+    //Constructors (NOTE: on C# variant of this example, constructors are not needed)
+    public Battery(String batteryModel, Integer hoursIdle, Integer hoursTalk, BatteryType batteryType) {
+        setBatteryModel(batteryModel);
+        setHoursIdle(hoursIdle);
+        setHoursTalk(hoursTalk);
+        setBatteryType(batteryType);
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
