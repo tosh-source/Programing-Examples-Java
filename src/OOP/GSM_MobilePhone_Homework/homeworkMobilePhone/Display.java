@@ -21,6 +21,12 @@ public class Display {
         this.displayColors = displayColors;
     }
 
+    //Constructors (NOTE: on C# variant of this example, constructors are not needed)
+    public Display(String displaySize, String displayColors) {
+        setDisplaySize(displaySize);
+        setDisplayColors(displayColors);
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
