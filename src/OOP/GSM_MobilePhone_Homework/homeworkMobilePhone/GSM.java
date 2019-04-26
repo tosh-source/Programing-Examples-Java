@@ -77,8 +77,7 @@ public class GSM {
 
         if (owner == null) {  //this is only to prevent "NullPointerException"
 
-        }
-        else if (owner.isEmpty()) {
+        } else if (owner.isEmpty()) {
             throw new IllegalArgumentException();
         }
 
@@ -105,7 +104,7 @@ public class GSM {
         return new ArrayList<>(this.callHistory);
     }
 
-    public void setCallHistory(ArrayList<Call> callHistory) {
+    public void setCallHistory(ArrayList<Call> callHistory) {   //ADD COMMENT FROM C# EXAMPLE
 
         if (this.callHistory == null) {
             this.callHistory = new ArrayList<>();
@@ -116,13 +115,28 @@ public class GSM {
     }
 
     //Constructors
-
     static {   //Static initialization block for for IPhone4S field & property.
+        iPhone4S = new GSM("IPhone 4S", "Apple", "500$", "Me",
+                new Battery("Apple 1430 mAh battery", 200, 8, BatteryType.LiIon),
+                new Display("3.5-inch (diagonal) Multi-Touch display", "16M"));
 
-
-    }   //NOTE: Java not allow a "static constructors", "static initialization block" is use instead!
+    }
+    //NOTE: Java not allow a "static constructors", "static initialization block" is use instead!
     //URL: https://softwareengineering.stackexchange.com/questions/228242/working-with-static-constructor-in-java
 
+    public GSM(String model, String manufacturer) {
+        this(model, manufacturer, null, null, null, null);
+    }
+
+    public GSM(String model, String manufacturer, String price, String owner, Battery batterySpec, Display displaySpec) {
+        this.setModel(model);
+        this.setManufacturer(manufacturer);
+        this.setPrice(price);
+        this.setOwner(owner);
+        this.setBatterySpec(batterySpec);
+        this.setDisplaySpec(displaySpec);
+        this.setCallHistory(new ArrayList<Call>());  //The List of objects (List<Call>) can NOT be null, so we need to initialize it here.
+    }
 
     //Methods
     public static void main(String[] args) {
