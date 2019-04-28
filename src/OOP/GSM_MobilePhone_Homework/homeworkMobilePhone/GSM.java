@@ -143,4 +143,20 @@ public class GSM {
 
     }
 
+
+    //Override methods
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        result.append("Model: " + this.getModel() + System.lineSeparator());
+        result.append("Manufacturer: " + this.getManufacturer() + System.lineSeparator());
+        result.append("Price: " + this.getPrice() + System.lineSeparator());
+        result.append("Owner: " + this.getOwner() + System.lineSeparator());
+        result.append("Battery Specification: " + this.getBatterySpec() + System.lineSeparator());
+        result.append("Display Specification: " + this.getDisplaySpec() + System.lineSeparator());
+        result.append("Call history information: " + this.getCallHistory() + System.lineSeparator());  //As opposed to C# variant, here in Java equivalent to "string.Join()" is NOT needed to iterate and print the current object!
+
+        return result.toString();
+    }
 }
