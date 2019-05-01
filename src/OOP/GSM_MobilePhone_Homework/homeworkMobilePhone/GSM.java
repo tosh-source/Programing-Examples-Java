@@ -143,6 +143,26 @@ public class GSM {
 
     }
 
+    public void AddCalls(Call... calls) {  //Adding information to CallHistory
+        for (var call : calls) {
+            this.callHistory.add(call);
+        }
+    }
+
+    public void DeleteCalls(String numberForDeleting) {
+        Call tempCall = new Call();
+        tempCall.setDialedPhoneNumber(numberForDeleting);
+
+        boolean isMatch = false;
+
+        for (int index = 0; index < this.callHistory.size(); index++) {
+            isMatch = this.callHistory.get(index).getDialedPhoneNumber().equals(tempCall.getDialedPhoneNumber());
+
+            if (isMatch == true) {
+                this.callHistory.remove(this.callHistory.get(index));
+            }
+        }
+    }
 
     //Override methods
     @Override
