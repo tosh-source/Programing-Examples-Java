@@ -164,6 +164,11 @@ public class GSM {
         }
     }
 
+    public void ClearCallHistory() {  //Clear CallHistory information
+        this.callHistory.clear();
+    }
+
+
     //Override methods
     @Override
     public String toString() {
