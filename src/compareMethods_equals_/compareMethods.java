@@ -63,3 +63,5 @@ public class compareMethods {
 //"" -> true
 //"some text" -> false
 //null -> false
+
+//BONUS: How to compare boolean/Boolean -> https://www.quora.com/Why-cant-we-compare-boolean-objects-in-Java
