@@ -1,6 +1,7 @@
 package bigNumbers;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 public class BigDecimal_Examples {
@@ -36,6 +37,17 @@ public class BigDecimal_Examples {
         System.out.println(bigDeci.compareTo(BigDecimal.ZERO) == 0);    //NOTE: To receive true/false as result, we need to compare with "0", because ".compareTo()" method actually return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than compared value.
         System.out.println(bigDeci.compareTo(BigDecimal.TEN) == 0);
         ////////////////////////////////////////////////////////////
+
+
+        //3.BigDecimal.round() method
+        //https://www.geeksforgeeks.org/bigdecimal-round-method-in-java/
+        ////////////////////////////////////////////////////////////////////////
+        BigDecimal PI = new BigDecimal("3.1415926535897932384626433832795");
+        MathContext mathContext = new MathContext(5);
+
+        BigDecimal roundedPI = PI.round(mathContext);
+        System.out.println("\n" + roundedPI);
+        ////////////////////////////////////////////////////////////////////////
 
     }
 }
