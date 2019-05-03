@@ -1,5 +1,8 @@
 package OOP.GSM_MobilePhone_Homework.homeworkMobilePhone;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -166,6 +169,30 @@ public class GSM {
 
     public void ClearCallHistory() {  //Clear CallHistory information
         this.callHistory.clear();
+    }
+
+    public BigDecimal CalculateTotalPrice() {
+        //NOTE: To make Java variant of GSM case exactly the same as C# variant, this method is needed as a trick of constructor chaining, because:
+        // Java don't provide optional parameters (like C#). To define default value, we need to chain the constructors. But constructor chaining is already used above! So for that reason we will use this two methods.
+
+        BigDecimal predefinedPrice = new BigDecimal("0.37");
+
+        return CalculateTotalPrice(predefinedPrice);
+    }
+
+    public BigDecimal CalculateTotalPrice(BigDecimal pricePerMinute) {
+
+        BigDecimal totalPrice = BigDecimal.ZERO;
+        for (var call : this.callHistory) {
+            totalPrice.add(
+                    (pricePerMinute.divide(new BigDecimal("60"), 28, RoundingMode.CEILING)
+                    ).multiply(call.getDuration()));
+        }
+        //Note that "Duration" is in seconds
+        //EXAMPLE: if price per minute is: 0.25$ (0.25/60 = 0.00416$ per second)
+
+        MathContext precisionNumb = new MathContext(3);
+        return totalPrice.round(precisionNumb);
     }
 
 
