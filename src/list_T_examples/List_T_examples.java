@@ -27,5 +27,18 @@ public class List_T_examples {
         System.out.println(integerList + "\n" + integerList2);
         //More info about ArrayList commands/methods --> https://www.w3schools.com/java/java_arraylist.asp
 
+
+
+        //II.Join List Collections
+        /////////////////////////////////////////
+        var listToJoin = new ArrayList<String>();
+        listToJoin.add("aaa");
+        listToJoin.add("bbb");
+        listToJoin.add("ccc");
+        listToJoin.add("ddd");
+
+        System.out.println(String.join(" ", listToJoin)); //Note that, to join Lists, we need to join with STRING delimiter (not with Char)!!
+        /////////////////////////////////////////
+
     }
 }
