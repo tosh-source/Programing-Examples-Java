@@ -1,6 +1,8 @@
 package list_T_examples;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,8 +30,8 @@ public class List_T_examples {
         //More info about ArrayList commands/methods --> https://www.w3schools.com/java/java_arraylist.asp
 
 
-
         //II.Join List Collections
+        //for more about String.join(), see: String_PrintingOptions
         /////////////////////////////////////////
         var listToJoin = new ArrayList<String>();
         listToJoin.add("aaa");
@@ -40,5 +42,17 @@ public class List_T_examples {
         System.out.println(String.join(" ", listToJoin)); //Note that, to join Lists, we need to join with STRING delimiter (not with Char)!!
         /////////////////////////////////////////
 
+
+        //IIa. Join/Concatenate two ArrayLists in Java
+        /////////////////////////////////////////
+        var anotherStrCollection = Arrays.asList("This", "is", "another", "string", "collection");
+
+        var joinedCollection = new ArrayList<String>();
+        joinedCollection.addAll(anotherStrCollection); //using Collection.addAll() method
+        joinedCollection.addAll(listToJoin);
+
+        System.out.println(joinedCollection);
+        System.out.println(String.join(" - ", joinedCollection));
+        /////////////////////////////////////////
     }
 }
