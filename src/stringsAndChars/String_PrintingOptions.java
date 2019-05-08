@@ -3,6 +3,7 @@ package stringsAndChars;
 import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class String_PrintingOptions {
 
@@ -17,12 +18,32 @@ public class String_PrintingOptions {
         }
         char[] getAllchars = inputAsStr.toCharArray();  //Convert String to Char[]
 
-        //Repeated Strings /Повтарящи се Символи
+        //Repeated Strings (String.join()) //Повтарящи се Символи
         //Синтаксиса, по-долу, отпечатва 15 звездички '*'. Тя може да бъде заменена с всичко др.,което преценим, намиращо се в уникодската таблица.
         ////////////////////////////////////////
         System.out.println(String.join(" ", Collections.nCopies(15, "*"))); // need from: -> import java.util.*;
         System.out.println(new String(new char[15]).replace("\0", "* "));   //NO need to import any packages.
         ////////////////////////////////////////
+        //-> https://www.geeksforgeeks.org/java-string-join-examples/
+        //-> https://beginnersbook.com/2017/10/java-string-join-method/
+        // For more info, How to Join String Collection see: List_T_examples > II.Join List Collections
+
+        //Another String.join() alternatives..
+        //a) with String.join()///////////////
+        System.out.println(String.join("-", "My", "name", "is."));
+        //////////////////////////////////////
+
+        //b) with StringJoiner////////////////
+        //-> http://docs.oracle.com/javase/8/docs/api/java/util/StringJoiner.html
+        StringJoiner joiner = new StringJoiner("-");
+        joiner.add("My");
+        joiner.add("name");
+        joiner.add("is.");
+
+        String joinedStr = joiner.toString();
+        System.out.println(joinedStr);
+        //////////////////////////////////////
+
 
         //Replace strings
         String myString = "aaabbbccc";
