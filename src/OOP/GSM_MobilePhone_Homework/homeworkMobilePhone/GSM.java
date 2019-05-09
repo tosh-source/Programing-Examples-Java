@@ -196,6 +196,13 @@ public class GSM {
     }
 
 
+    public String CallHistoryToString() {
+        String result;
+        result = String.join("", this.getCallHistory().toString());
+
+        return result;
+    }
+
     //Override methods
     @Override
     public String toString() {
@@ -207,7 +214,7 @@ public class GSM {
         result.append("Owner: " + this.getOwner() + System.lineSeparator());
         result.append("Battery Specification: " + this.getBatterySpec() + System.lineSeparator());
         result.append("Display Specification: " + this.getDisplaySpec() + System.lineSeparator());
-        result.append("Call history information: " + this.getCallHistory() + System.lineSeparator());  //As opposed to C# variant, here in Java equivalent to "string.Join()" is NOT needed to iterate and print the current object!
+        result.append("Call history information: " + this.getCallHistory() + System.lineSeparator());  //As opposed to C# variant, here in Java equivalent to "string.Join()" is NOT needed to iterate and print the Array objects!
 
         return result.toString();
     }
