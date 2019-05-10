@@ -6,7 +6,18 @@ public class GSMtest {
 
     public static void main(String[] args) {
 
-        GSM gsm = new GSM();
-        gsm.setPrice("500");
+        //Define array of devices (GSMs)
+        var gsm = new GSM[2];
+
+        //First GSM
+        gsm[0] = new GSM("S 7 Edge", "Samsung", "500$", "Frank",
+                null,
+                null);
+
+        System.out.println("First GSM\n" + gsm[0]);
+
+        //Third GSM
+        System.out.println("\n" + GSM.getiPhone4S());
+
     }
 }
