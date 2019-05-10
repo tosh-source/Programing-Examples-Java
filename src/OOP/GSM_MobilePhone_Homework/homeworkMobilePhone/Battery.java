@@ -39,7 +39,11 @@ public class Battery {
         this.batteryType = batteryType;
     }
 
-    //Constructors (NOTE: on C# variant of this example, constructors are not needed)
+    //Constructors (NOTE: on C# variant of this example, constructors can be skipped)
+    public Battery() {
+        this("", 0, 0, BatteryType.NotDefined);
+    }
+
     public Battery(String batteryModel, Integer hoursIdle, Integer hoursTalk, BatteryType batteryType) {
         setBatteryModel(batteryModel);
         setHoursIdle(hoursIdle);
