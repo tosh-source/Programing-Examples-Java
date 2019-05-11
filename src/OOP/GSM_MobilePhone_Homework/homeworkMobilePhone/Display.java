@@ -21,7 +21,11 @@ public class Display {
         this.displayColors = displayColors;
     }
 
-    //Constructors (NOTE: on C# variant of this example, constructors are not needed)
+    //Constructors (NOTE: on C# variant of this example, constructors can be skipped)
+    public Display() {
+        this("", "");
+    }
+
     public Display(String displaySize, String displayColors) {
         setDisplaySize(displaySize);
         setDisplayColors(displayColors);
