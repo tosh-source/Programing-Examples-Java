@@ -11,8 +11,8 @@ public class GSMtest {
 
         //First GSM
         gsm[0] = new GSM("S 7 Edge", "Samsung", "500$", "Frank",
-                null,
-                null);
+                new Battery(),
+                new Display());
 
         System.out.println("First GSM\n" + gsm[0]);
 
