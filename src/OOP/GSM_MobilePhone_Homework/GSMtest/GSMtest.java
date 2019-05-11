@@ -13,11 +13,17 @@ public class GSMtest {
         gsm[0] = new GSM("S 7 Edge", "Samsung", "500$", "Frank",
                 new Battery(),
                 new Display());
-
         System.out.println("First GSM\n" + gsm[0]);
+
+        //Second GSM
+        gsm[1] = new GSM("S 7 Edge", "Samsung", "500$", "Frank",
+                new Battery("Samsung 3600mAh battery", 96, 27, BatteryType.LiIon),
+                new Display());
+        System.out.println("\nSecond GSM\n" + gsm[1]);
 
         //Third GSM
         System.out.println("\n" + GSM.getiPhone4S());
 
+        //Manipulate Call (history) class
     }
 }
