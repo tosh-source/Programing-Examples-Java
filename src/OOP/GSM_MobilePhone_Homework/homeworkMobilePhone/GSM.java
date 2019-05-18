@@ -5,6 +5,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -197,10 +198,13 @@ public class GSM {
 
 
     public String CallHistoryToString() {
-        String result;
-        result = String.join("", this.getCallHistory().toString());
 
-        return result;
+        StringJoiner result = new StringJoiner("");
+        for (var call : this.getCallHistory()) {
+            result.add(call.toString());
+        }
+
+        return result.toString();
     }
 
     //Override methods

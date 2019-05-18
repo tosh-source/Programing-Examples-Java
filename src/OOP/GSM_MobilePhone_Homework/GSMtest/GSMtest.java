@@ -25,5 +25,12 @@ public class GSMtest {
         System.out.println("\n" + GSM.getiPhone4S());
 
         //Manipulate Call (history) class
+        Call call = new Call();
+        call.setDialedPhoneNumber("0888997766");
+        System.out.println(call.getDate());
+        System.out.println(call.getDialedPhoneNumber());
+
+        gsm[1].AddCalls(call);              //add call
+        System.out.println(gsm[1].CallHistoryToString());
     }
 }

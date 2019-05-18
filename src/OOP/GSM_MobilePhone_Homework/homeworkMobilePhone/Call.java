@@ -56,7 +56,9 @@ public class Call {
             result += "Dialed phone number: " + this.getDialedPhoneNumber() + System.lineSeparator();
         }
 
-        if (getDuration().compareTo(BigDecimal.ZERO) != 0) {
+        if (getDuration() == null) {  //This is only to prevent "NullPointerException" and to print correctly if there is no information (null).
+
+        } else if (getDuration().compareTo(BigDecimal.ZERO) != 0) {
             result += "Call duration: " + this.getDuration() + System.lineSeparator();
         }
 
