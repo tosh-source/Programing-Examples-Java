@@ -21,7 +21,7 @@ public class Call {
     }
 
     public String getTime() {
-        String formattedTime = time.format(DateTimeFormatter.ofPattern("HH.mm:SS"));
+        String formattedTime = time.format(DateTimeFormatter.ofPattern("HH.mm:ss"));
 
         return formattedTime;
     }
