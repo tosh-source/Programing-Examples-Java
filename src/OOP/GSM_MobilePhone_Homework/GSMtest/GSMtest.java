@@ -35,5 +35,14 @@ public class GSMtest {
         gsm[1].DeleteCalls("0888997766"); //delete call by given number
         System.out.println(gsm[1].CallHistoryToString());
         gsm[1].ClearCallHistory();        //delete all calls from history
+
+        //Check ENCAPSULATION in CallHistory property (in GSM class)
+        //==========================================
+        //gsm[1].getCallHistory().add(new Call());
+        //for (var item : gsm[1].getCallHistory()) {
+        //    System.out.println(item);
+        //}
+        //==========================================
+        //Note: replace "return new ArrayList<>(this.callHistory);" with -> "return this.callHistory;" in getCallHistory() property/method and run above commented code again.
     }
 }
