@@ -30,7 +30,10 @@ public class GSMtest {
         System.out.println(call.getDate());
         System.out.println(call.getDialedPhoneNumber());
 
-        gsm[1].AddCalls(call);              //add call
+        gsm[1].AddCalls(call);            //add call
         System.out.println(gsm[1].CallHistoryToString());
+        gsm[1].DeleteCalls("0888997766"); //delete call by given number
+        System.out.println(gsm[1].CallHistoryToString());
+        gsm[1].ClearCallHistory();        //delete all calls from history
     }
 }
