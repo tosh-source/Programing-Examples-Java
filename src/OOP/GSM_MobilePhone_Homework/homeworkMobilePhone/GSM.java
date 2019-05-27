@@ -105,17 +105,19 @@ public class GSM {
     }
 
     public ArrayList<Call> getCallHistory() {
-        return new ArrayList<>(this.callHistory);
+        return new ArrayList<>(this.callHistory);  //This technique is ENCAPSULATION, and is needed to prevent direct access to the object, when we get information. Unless we have a special method for this operation, created by us (e.g.: Add, Adding, AddCallInfo and so on).
     }
 
-    public void setCallHistory(ArrayList<Call> callHistory) {   //ADD COMMENT FROM C# EXAMPLE
+    //See video (time 1:06:57) "OOP 2015 -> Съботен Workshop -> Домашно - Дефиниране на класове - част 1 - 21 март 2015 - Евлоги.mp4"
+    //or follow link (time 1:06:57) : https://my.telerikacademy.com/Courses/LectureResources/Video/6115/%d0%92%d0%b8%d0%b4%d0%b5%d0%be-21-%d0%bc%d0%b0%d1%80%d1%82-2015-%d0%95%d0%b2%d0%bb%d0%be%d0%b3%d0%b8
+    public void setCallHistory(ArrayList<Call> callHistory) {
 
         if (this.callHistory == null) {
-            this.callHistory = new ArrayList<>();
+            this.callHistory = new ArrayList<>();  //if null, create an empty object " List<Call>()"
         }
 
-        this.callHistory.clear();
-        this.callHistory = callHistory;
+        this.callHistory.clear();        //then, if there is previous elements, clear it..
+        this.callHistory = callHistory;  //after that, assign the value
     }
 
     //Constructors
