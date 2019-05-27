@@ -12,5 +12,11 @@ public class GSMCallHistoryTest {
                 new Battery("Samsung 3500mAh battery", 96, 27, BatteryType.LiIon),
                 new Display());
 
+        //12.2 Add few calls.
+        Integer countOfCalls = 7;
+        Call[] allCalls = new Call[countOfCalls];
+        Integer clientPhoneNumber = 889977550;
+
+        //set calls and their duration time//
     }
 }
