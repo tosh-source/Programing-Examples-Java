@@ -49,6 +49,16 @@ public class BigDecimal_Examples {
         System.out.println("\n" + roundedPI);
         ////////////////////////////////////////////////////////////////////////
 
+        //4. Addition/Subtraction in BigDecimal
+        BigDecimal decimalA = new BigDecimal("15");
+        BigDecimal decimalB = BigDecimal.TEN;
+        ////////////////////////////////////////////////
+        decimalA = decimalA.add(decimalB);
+        System.out.println("\nAddition: " + decimalB);
+
+        decimalA = decimalA.subtract(decimalB);
+        System.out.println("Subtraction: " + decimalA);
+        ////////////////////////////////////////////////
     }
 }
 //Math operations for BigDecimal in Java -> https://www.tutorialspoint.com/math-operations-for-bigdecimal-in-java
