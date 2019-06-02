@@ -187,9 +187,8 @@ public class GSM {
 
         BigDecimal totalPrice = BigDecimal.ZERO;
         for (var call : this.callHistory) {
-            totalPrice.add(
-                    (pricePerMinute.divide(new BigDecimal("60"), 28, RoundingMode.CEILING)
-                    ).multiply(call.getDuration()));
+            totalPrice = totalPrice.add(
+                    (pricePerMinute.divide(new BigDecimal("60"), 28, RoundingMode.CEILING)).multiply(call.getDuration()));
         }
         //Note that "Duration" is in seconds
         //EXAMPLE: if price per minute is: 0.25$ (0.25/60 = 0.00416$ per second)
@@ -197,7 +196,6 @@ public class GSM {
         MathContext precisionNumb = new MathContext(3);
         return totalPrice.round(precisionNumb);
     }
-
 
     public String CallHistoryToString() {
 
