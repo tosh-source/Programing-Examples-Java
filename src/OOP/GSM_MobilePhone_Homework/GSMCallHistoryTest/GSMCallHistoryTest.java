@@ -3,6 +3,9 @@ package OOP.GSM_MobilePhone_Homework.GSMCallHistoryTest;
 import OOP.GSM_MobilePhone_Homework.homeworkMobilePhone.*;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GSMCallHistoryTest {
 
@@ -38,5 +41,11 @@ public class GSMCallHistoryTest {
         System.out.println("Total price of calls: " +
                 s8.CalculateTotalPrice(new BigDecimal("0.37")) +
                 "$");
+
+        //12.5 Remove the longest call from the history and calculate the total price again.
+
+        //manually set duration time for testing purpose//
+        allCalls[0].setDuration(new BigDecimal("480")); //set first call(889977550) to 8 min (this call duration, should be the longest one)
+
     }
 }
