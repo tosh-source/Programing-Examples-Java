@@ -4,8 +4,6 @@ import OOP.GSM_MobilePhone_Homework.homeworkMobilePhone.*;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class GSMCallHistoryTest {
 
@@ -47,5 +45,12 @@ public class GSMCallHistoryTest {
         //manually set duration time for testing purpose//
         allCalls[0].setDuration(new BigDecimal("480")); //set first call(889977550) to 8 min (this call duration, should be the longest one)
 
+        //order by duration time (with lambda expression)
+        var orderedCall = Arrays.stream(allCalls).sorted((x, y) -> x.getDuration().compareTo(y.getDuration()));
+        var longestCall = orderedCall.skip(countOfCalls - 1).findFirst().get();  //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
+
+
+        //System.out.println(longestCall.toString());
     }
 }
+
