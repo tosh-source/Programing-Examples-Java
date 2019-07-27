@@ -46,11 +46,13 @@ public class GSMCallHistoryTest {
         allCalls[0].setDuration(new BigDecimal("480")); //set first call(889977550) to 8 min (this call duration, should be the longest one)
 
         //order by duration time (with lambda expression)
-        var orderedCall = Arrays.stream(allCalls).sorted((x, y) -> x.getDuration().compareTo(y.getDuration()));
-        var longestCall = orderedCall.skip(countOfCalls - 1).findFirst().get();  //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
+        var orderedCall = Arrays.stream(allCalls).sorted((x, y) -> x.getDuration().compareTo(y.getDuration())).toArray();
+        var orderedCallClone = orderedCall.clone();
+        var longestCall = Arrays.stream(orderedCall).reduce((call, call2) -> call2);              //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
+        //var longestCall = Arrays.stream(orderedCall).skip(countOfCalls - 1).findFirst().get();  //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
 
+        allCalls = Arrays.stream(orderedCallClone).toArray(Call[]::new);
 
-        //System.out.println(longestCall.toString());
     }
 }
 
