@@ -48,11 +48,16 @@ public class GSMCallHistoryTest {
         //order by duration time (with lambda expression)
         var orderedCall = Arrays.stream(allCalls).sorted((x, y) -> x.getDuration().compareTo(y.getDuration())).toArray();
         var orderedCallClone = orderedCall.clone();
-        var longestCall = Arrays.stream(orderedCall).reduce((call, call2) -> call2);              //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
-        //var longestCall = Arrays.stream(orderedCall).skip(countOfCalls - 1).findFirst().get();  //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
-
+        var longestCall = Arrays.stream(orderedCall).reduce((call, call2) -> call2).get();              //Get Last element with lambda expressions. Equivalent to ".Last()" in C#.
+                                                                                                        //"get()" method here is optional, if we want to convert returned "Optional" object to normal Java "Object". See link below**.
         allCalls = Arrays.stream(orderedCallClone).toArray(Call[]::new);
+
+        //add new ordered call history and delete the longest one
+        s8.ClearCallHistory();
+        s8.AddCalls(allCalls);
+        s8.DeleteCalls(((Call) longestCall).getDialedPhoneNumber());
 
     }
 }
 
+//** -> .get() method, more info: https://stackoverflow.com/questions/42977137/creating-an-object-from-optionalobject
