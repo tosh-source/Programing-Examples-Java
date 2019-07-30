@@ -62,6 +62,8 @@ public class GSMCallHistoryTest {
                             s8.CalculateTotalPrice() +
                             "$ (new calculation)");
 
+        //12.6 Finally clear the call history
+        s8.ClearCallHistory();
     }
 }
 
