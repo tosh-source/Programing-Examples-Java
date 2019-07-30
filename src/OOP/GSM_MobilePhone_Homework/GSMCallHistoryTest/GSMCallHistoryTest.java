@@ -57,6 +57,11 @@ public class GSMCallHistoryTest {
         s8.AddCalls(allCalls);
         s8.DeleteCalls(((Call) longestCall).getDialedPhoneNumber());
 
+        //calculate the total price
+        System.out.println("Total price of calls: " +
+                            s8.CalculateTotalPrice() +
+                            "$ (new calculation)");
+
     }
 }
 
