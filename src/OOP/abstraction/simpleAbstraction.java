@@ -25,4 +25,5 @@ public class simpleAbstraction {
     }
 }
 
+//Generics in Java --> https://www.geeksforgeeks.org/generics-in-java/
 //More about Iterable<T> (IEnumerable<T> in C#) --> https://stackoverflow.com/questions/10664729/whats-the-equivalent-of-c-sharp-ienumerable-in-java-the-covariant-capable-one
