@@ -19,7 +19,7 @@ public class simpleAbstraction {
 
         String result = "";
         for (var currentItem : collection) {
-            result += currentItem.toString() + System.lineSeparator();  //Direct using of System.out.println() is not good abstractive practice! So value as string is used instead!
+            result += currentItem.toString() + System.lineSeparator();  //Direct using of System.out.println() is not good abstraction practice! So value as string is used instead!
         }
         return result;
     }
