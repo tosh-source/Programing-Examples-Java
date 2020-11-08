@@ -24,8 +24,8 @@ public class Arrays_Examples {
 
         //print arrays
         //with for-each
-        for (int[] i : multiDimJaggedArr) {
-            System.out.println(Arrays.toString(i));
+        for (int[] integers : multiDimJaggedArr) {
+            System.out.println(Arrays.toString(integers));
         }
         //with method "Arrays.deepToString()" <-to print "Multidimensional Аrrays"
         System.out.println("\n" + Arrays.deepToString(multiDimJaggedArr) + "\n");
