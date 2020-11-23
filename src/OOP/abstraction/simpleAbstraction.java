@@ -15,7 +15,7 @@ public class simpleAbstraction {
         System.out.println(PrintAnyCollection(listOfStr));
     }
 
-    public static <T> String PrintAnyCollection(List<T> collection) {  //Use more abstractive class/interfaces like List<T>, Collection<T>, Collection<? extends T>, Iterable<T> instead of ArrayList<>() and so on. NOTE: "List<T>" in Java is INTERFACE, unlike in C#. C# equivalent is more abstract "IList<T>".
+    public static <T> String PrintAnyCollection(List<T> collection) {  //Use more abstractive class/interfaces like List<T> or AbstractCollection<T>**, Collection<T>, Collection<? extends T>, Iterable<T> instead of ArrayList<>() and so on. NOTE: "List<T>" in Java is INTERFACE, unlike in C#. C# equivalent is more abstract "IList<T>".
 
         String result = "";
         for (var currentItem : collection) {
@@ -26,5 +26,6 @@ public class simpleAbstraction {
 }
 
 //Generics in Java --> https://www.geeksforgeeks.org/generics-in-java/
+//** Class AbstractCollection<T> provides a skeletal implementation of the Collection interface. --> https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html
 //More about Iterable<T> (IEnumerable<T> in C#) --> https://stackoverflow.com/questions/10664729/whats-the-equivalent-of-c-sharp-ienumerable-in-java-the-covariant-capable-one
 //More about "How to convert Collection" --> https://stackoverflow.com/questions/6416706/easy-way-to-convert-iterable-to-collection
