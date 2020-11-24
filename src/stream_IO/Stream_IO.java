@@ -1,8 +1,12 @@
 package stream_IO;
 
+import org.w3c.dom.css.CSSFontFaceRule;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;  //this package is needed for Stream input/output operations
 import java.io.UnsupportedEncodingException;
+import java.util.Scanner;
 
 public class Stream_IO {
     public static void main(String[] args) {
@@ -30,6 +34,31 @@ public class Stream_IO {
         /////////////////////////////////////////////////////////////
 
         //II.File reading (stream input)
+        /////////////////////////////////////////////////////////////
+        File fileForReading = new File(filePath + fileName);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(fileForReading);
 
+            String textFromFile = "";
+            while (scanner.hasNextLine()){
+                textFromFile += scanner.nextLine() + System.lineSeparator();
+            }
+
+            System.out.println(textFromFile);
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File " + fileName + "was not found!");
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("File " + fileName + "was not found!");
+            e.printStackTrace();
+        } finally {
+            scanner.close();
+        }
+        /////////////////////////////////////////////////////////////
     }
 }
+
+//NOTE: Using try/catch for file operation in Java is suggested by IDEs/compiler!
+//more about "Different ways of Reading a text file in Java" --> https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
