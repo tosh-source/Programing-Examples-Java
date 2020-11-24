@@ -2,10 +2,9 @@ package stream_IO;
 
 import org.w3c.dom.css.CSSFontFaceRule;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintStream;  //this package is needed for Stream input/output operations
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Stream_IO {
@@ -56,6 +55,17 @@ public class Stream_IO {
         } finally {
             scanner.close();
         }
+        /////////////////////////////////////////////////////////////
+
+        //IIa.File reading as String
+        /////////////////////////////////////////////////////////////
+        String readTextAsString = "";
+        try {
+         readTextAsString = new String(Files.readAllBytes(Paths.get(filePath + fileName)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(readTextAsString);
         /////////////////////////////////////////////////////////////
     }
 }
