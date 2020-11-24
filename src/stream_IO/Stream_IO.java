@@ -10,10 +10,9 @@ public class Stream_IO {
         String filePath = "";
         String fileName = "testDoc.txt";
 
-        //.I File writing (stream out)
+        //.I File writing (stream output)
         /////////////////////////////////////////////////////////////
-        PrintStream streamWriter;
-        {
+        PrintStream streamWriter = null;
             try {
                 streamWriter = new PrintStream(filePath + fileName, "UTF-8");
 
@@ -21,14 +20,16 @@ public class Stream_IO {
                     streamWriter.println(numbs);
                 }
 
-                streamWriter.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
+            } finally {
+                streamWriter.close();  //Always close streams!!!
             }
-        }
         /////////////////////////////////////////////////////////////
+
+        //II.File reading (stream input)
 
     }
 }
