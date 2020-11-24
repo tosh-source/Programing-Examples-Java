@@ -5,17 +5,30 @@ import java.io.PrintStream;  //this package is needed for Stream input/output op
 import java.io.UnsupportedEncodingException;
 
 public class Stream_IO {
+    public static void main(String[] args) {
 
-    //.I File writing (stream out)
-    PrintStream streamWriter;
-    {
-        try {
-            streamWriter = new PrintStream("testDoc.txt", "UTF-8");
+        String filePath = "";
+        String fileName = "testDoc.txt";
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+        //.I File writing (stream out)
+        /////////////////////////////////////////////////////////////
+        PrintStream streamWriter;
+        {
+            try {
+                streamWriter = new PrintStream(filePath + fileName, "UTF-8");
+
+                for (int numbs = 0; numbs <= 350; numbs++) {
+                    streamWriter.println(numbs);
+                }
+
+                streamWriter.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
+        /////////////////////////////////////////////////////////////
+
     }
 }
