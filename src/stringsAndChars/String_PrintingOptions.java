@@ -82,7 +82,7 @@ public class String_PrintingOptions {
         /////////////////////////////
         System.out.println(MessageFormat.format("My name is {0}, I''m {1} years old..", name, age));
         /////////////////////////////
-        //In method "MessageFormat.format()" if need to display: " I'm " , then we need to add an ONE extra apostrophe: " I''m " , becouse an apostrophe (aka single quote) in a "MessageFormat" pattern starts a quoted string and is NOT interpreted on its own. 
+        //In method "MessageFormat.format()" if need to display: " I'm " , then we need to add an ONE extra apostrophe: " I''m " , because an apostrophe (aka single quote) in a "MessageFormat" pattern starts a quoted string and is NOT interpreted on its own.
         //for more info, visit -> https://stackoverflow.com/questions/17569608/format-a-message-using-messageformat-format-in-java
         //or Javadoc "MessageFormat.format()" -> http://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html
 
