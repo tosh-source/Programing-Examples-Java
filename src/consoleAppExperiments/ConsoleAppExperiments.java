@@ -9,19 +9,8 @@ import java.util.regex.*;
 
 public class ConsoleAppExperiments {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
-        //        //Input
-        //        Scanner input = new Scanner(System.in);
-        //        int value = input.nextInt();
-        //        //Писане във файл
-        //          PrintStream printStream = new PrintStream("/media/chupov/My temp files/temp/testDoc.txt");
-        //          for (int i = 0; i <= 200000000; i++) {
-        //            printStream.print(i);
-        //            printStream.print(" ");
-        //        }
-
-            
         
     }
 }
