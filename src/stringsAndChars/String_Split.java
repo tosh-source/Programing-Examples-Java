@@ -9,6 +9,7 @@ public class String_Split {
     public static void main(String[] args) {
 
         //Split string by criteria.
+        //Use Regular expression OR "|" , to split text and catch many strings. Example --> "ONE|SECOND"
         //////////////////////////////////////////////////////////
         String str = "ONE-string-SECOND-string-";
         String[] splittedStr = str.split("ONE|SECOND");  //.split() method always expect REGEX! **
