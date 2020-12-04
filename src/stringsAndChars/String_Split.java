@@ -16,6 +16,8 @@ public class String_Split {
         System.out.println(String.join(", ", splittedStr));
         //////////////////////////////////////////////////////////
 
+        //Remove any STRANGE strings from the read file (SEE "Stream_IO" EXAMPLE).
+
         //Remove empty entries from results.
         //////////////////////////////////////////////////////////
         var tempVal = new ArrayList<>();
