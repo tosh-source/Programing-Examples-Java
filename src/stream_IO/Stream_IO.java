@@ -34,12 +34,13 @@ public class Stream_IO {
         /////////////////////////////////////////////////////////////
         File fileForReading = new File(filePath + fileName);
         Scanner scanner = null;
+        String textFromFile = "";
         try {
             scanner = new Scanner(fileForReading);
 
-            String textFromFile = "";
             while (scanner.hasNextLine()){
                 textFromFile += scanner.nextLine() + System.lineSeparator();
+                //Remove any STRANGE strings from the read file (SEE BELOW).
             }
 
             System.out.println(textFromFile);
@@ -54,8 +55,11 @@ public class Stream_IO {
             scanner.close();
         }
         /////////////////////////////////////////////////////////////
+        //IIa.Remove any STRANGE strings from the read file. **
+        //WARNING! Java may read BOM from file and assign as empty ("") string at the beginning of the read file, which is not correct! This regex remove all not ASCII chars!
+        //textFromFile = textFromFile.replaceAll("[^\\x00-\\x7F]", "");
 
-        //IIa.File reading as String
+        //III.File reading as String
         /////////////////////////////////////////////////////////////
         String readTextAsString = "";
         try {
@@ -70,3 +74,5 @@ public class Stream_IO {
 
 //NOTE: Using try/catch for file operation in Java is suggested by IDEs/compiler!
 //more about "Different ways of Reading a text file in Java" --> https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
+
+//** Java - removing strange characters from a String -> https://stackoverflow.com/questions/5462693/java-removing-strange-characters-from-a-string
