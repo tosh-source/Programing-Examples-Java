@@ -22,10 +22,8 @@ public class String_Split {
         //////////////////////////////////////////////////////////
         var tempVal = new ArrayList<>();
         for (String item : splittedStr) {
-            if (item.isBlank()){  //.isBlank() check for empty strings and whitespaces ***
-                //just skip current string
-            } else {
-                tempVal.add(item);
+            if (!(item.isBlank())){  //.isBlank() check for empty strings and whitespaces ***
+                tempVal.add(item);   //add only if there is a value
             }
         }
         splittedStr = tempVal.toArray(splittedStr);
