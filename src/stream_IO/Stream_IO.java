@@ -26,7 +26,9 @@ public class Stream_IO {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } finally {
-                streamWriter.close();  //Always close streams!!!
+                if (streamWriter != null) {  //Method invocation 'close' may produce 'NullPointerException', so for that reason "if" statement is needed!
+                    streamWriter.close();    //Always close streams!!!
+                }
             }
         /////////////////////////////////////////////////////////////
 
@@ -52,7 +54,9 @@ public class Stream_IO {
             System.out.println("File " + fileName + "was not found!");
             e.printStackTrace();
         } finally {
-            scanner.close();
+            if (scanner != null) {  //Method invocation 'close' may produce 'NullPointerException', so for that reason "if" statement is needed!
+                scanner.close();
+            }
         }
         /////////////////////////////////////////////////////////////
         //IIa.Remove any STRANGE strings from the read file. **
