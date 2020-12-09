@@ -26,6 +26,7 @@ public class simpleAbstraction {
 }
 
 //Generics in Java --> https://www.geeksforgeeks.org/generics-in-java/
+//How to use Class<T> in Java? --> https://stackoverflow.com/questions/462297/how-to-use-classt-in-java
 //** Class AbstractCollection<T> provides a skeletal implementation of the Collection interface. --> https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html
 //More about Iterable<T> (IEnumerable<T> in C#) --> https://stackoverflow.com/questions/10664729/whats-the-equivalent-of-c-sharp-ienumerable-in-java-the-covariant-capable-one
 //More about "How to convert Collection" --> https://stackoverflow.com/questions/6416706/easy-way-to-convert-iterable-to-collection
