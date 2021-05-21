@@ -8,7 +8,7 @@ public class Reflection {
 
     public static final String newLine = System.lineSeparator();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         //Reflection is possibility to get types, methods, properties from some kind of object at runtime.
 
         //1.Use Reflection for INSTANCE of unknown class.
@@ -19,9 +19,12 @@ public class Reflection {
         var objFields = cat.getClass().getFields();  //If fields are PRIVATE, will show nothing!
         objFields = cat.getClass().getDeclaredFields();     //Since in most cases fields are with private modifiers "cat.getClass().getFields()" will not work (unless they are public). So ".getDeclaredFields()" is used instead!
 
-        for (var property : objFields) {
+        for (var field : objFields) {
+            field.setAccessible(true);
+
             System.out.println("Private fields: "
-                    + property.getName());
+                    + field.getName() + ": "
+                    + field.get(cat));
         }
 
     }
