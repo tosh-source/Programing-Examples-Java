@@ -3,6 +3,7 @@ package OOP.reflection;
 import OOP.myCat.Cat;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class Reflection {
 
@@ -30,6 +31,17 @@ public class Reflection {
         System.out.println();
         System.out.println("GetMethod: " + cat.getClass().getMethod("sayMiauuu"));  //To use .getMethod() we need to add exception to current main method*** or surround with try/catch block!
         System.out.println("GetProperty: " + cat.getClass().getMethod("getColor").getName());
+
+        //2.Use Reflection for unknown class.
+        var objMethods = Cat.class.getMethods();
+
+        System.out.println(newLine
+                + "Class "
+                + Cat.class.getSimpleName()  //Or use getName()
+                + " have: ");
+        for (Method currentMethod : objMethods) {
+            System.out.println("Method Name: " + currentMethod.getName());
+        }
     }
 }
 
