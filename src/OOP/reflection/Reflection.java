@@ -8,7 +8,7 @@ public class Reflection {
 
     public static final String newLine = System.lineSeparator();
 
-    public static void main(String[] args) throws IllegalAccessException {  //IllegalAccessException is needed when use get() method! **
+    public static void main(String[] args) throws IllegalAccessException, NoSuchMethodException {  //Needed exception: IllegalAccessException to use get()** , NoSuchMethodException to use .getMethod()***
         //Reflection is possibility to get types, methods, properties from some kind of object at runtime.
 
         //1.Use Reflection for INSTANCE of unknown class.
@@ -27,8 +27,13 @@ public class Reflection {
                     + field.get(cat));  //To use get() we need to add exception to current main method** or surround with try/catch block!
         }
 
+        System.out.println();
+        System.out.println("GetMethod: " + cat.getClass().getMethod("sayMiauuu"));  //To use .getMethod() we need to add exception to current main method*** or surround with try/catch block!
+        System.out.println("GetProperty: " + cat.getClass().getMethod("getColor").getName());
     }
 }
 
 // https://www.geeksforgeeks.org/reflection-in-java/
 //getCanonicalName(), getSimpleName() and getName() in Java -> https://stackoverflow.com/questions/15202997/what-is-the-difference-between-canonical-name-simple-name-and-class-name-in-jav
+//Java reflection how to get field value from an object, not knowing its class -> https://stackoverflow.com/questions/16171637/java-reflection-how-to-get-field-value-from-an-object-not-knowing-its-class/16172206
+
