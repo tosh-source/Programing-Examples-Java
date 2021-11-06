@@ -6,7 +6,7 @@ public class simpleAbstraction {
 
     public static void main(String[] args) {
 
-        int[] intsArr = new int[]{1, 2, 3, 4, 5};
+        Integer[] intsArr = new Integer[]{1, 2, 3, 4, 5};  //Why is better to use Integer[] instead of int[]*
         String[] stringsArr = new String[]{"AA", "BB", "CC", "DD"};
         List<String> listOfStr = Arrays.asList(stringsArr);
 
@@ -24,6 +24,9 @@ public class simpleAbstraction {
         return result;
     }
 }
+
+//Why is better to use Integer[] instead of int[] --> If we use int[] instead of Integer[] to convert to List we get only FIRST element (one dimension array). There's no such thing as a List<int> in Java - generics don't support primitives. Autoboxing only happens for a single element, not for arrays of primitives.
+// --> https://stackoverflow.com/questions/1467913/arrays-aslist-not-working-as-it-should
 
 //Generics in Java --> https://www.geeksforgeeks.org/generics-in-java/
 //How to use Class<T> in Java? --> https://stackoverflow.com/questions/462297/how-to-use-classt-in-java
